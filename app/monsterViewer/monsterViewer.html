@@ -1,0 +1,102 @@
+<a href="#/monsters"><button>Back</button></a>
+<div class="monster">
+ <!-- <div class="container">
+      <img ng-src="{{ detail.url}}" />
+      <h2 class="photo-title">{{ detail.name }}</h2>
+      <p class="photo-author">{{ detail.type }}</p>
+      <p class="photo-author">{{ detail.alignment }}</p>
+      <p class="photo-author">{{ detail.size }}</p>
+      <p class="photo-views">{{detail.speed | number }}</p>
+      <p class="photo-views">{{detail.ac | number }}</p>
+      <p class="photo-views">{{detail.hp | number }}</p>
+      <ul class='statblock'>
+        <li>{{detail.str | number }}</li>
+        <li>{{detail.dex | number }}</li>
+        <li>{{detail.con | number }}</li>
+        <li>{{detail.int | number }}</li>
+        <li>{{detail.wis | number }}</li>
+        <li>{{detail.cha | number }}</li>
+      </ul>
+      <p class="photo-pubdate">{{detail.save }}</p>
+      <p class="photo-pubdate">{{detail.conditionImmune }}</p>
+      <p class="photo-pubdate">{{detail.senses}}</p>
+      <p class="photo-pubdate">{{detail.passive}}</p>
+      <p class="photo-pubdate">{{detail.languages}}</p>
+      <p class="photo-views">{{detail.cr | number}}</p>
+      <p class="photo-pubdate">{{detail.trait}}</p>
+      <p class="photo-pubdate">{{detail.action}}</p>
+  </div>  -->
+
+  <div class="creatureBlock">
+    <div class="createImage">
+        <img class="img-responsive" ng-src="{{ detail.url }}">
+    </div>
+    <stat-block data-two-column data-content-height="672">
+      <creature-heading>
+        <span class="h1strapless">{{detail.name}}</span>
+        <span class="h2strapless">{{detail.type}}, {{detail.alignment}}</span>
+      </creature-heading>
+
+      <top-stats>
+        <property-line>
+          <span class="h4strapless">Armor Class</span>
+          <span class="pstrapless">{{detail.ac}}</span>
+        </property-line>
+        <property-line>
+          <span class="h4strapless">Hit Points</span>
+          <span class="pstrapless">{{detail.hp}}</span>
+        </property-line>
+        <property-line>
+          <span class="h4strapless">Speed</span>
+          <span class="pstrapless">{{detail.speed}}</span>
+        </property-line>
+
+        <abilities-block
+                         data-str="12"
+                         data-dex="12"
+                         data-con="13"
+                         data-int="14"
+                         data-wis="15"
+                         data-cha="16"></abilities-block>
+
+        <property-line>
+          <span class="h4strapless">Damage Immunities</span>
+          <span class="pstrapless">{{detail.immune}}</span>
+        </property-line>
+        <property-line>
+          <span class="h4strapless">Condition Immunities</span>
+          <span class="pstrapless">blinded, charmed, deafened, exhaustion, frightened, paralyzed,
+            petrified, poisoned</span>
+        </property-line>
+        <property-line>
+          <span class="h4strapless">Senses</span>
+          <span class="pstrapless">{{detail.senses}}, passive Perception {{detail.passive}}</span>
+        </property-line>
+        <property-line>
+          <span class="h4strapless">Languages</span>
+          <span class="pstrapless">{{detail.languages}}</span>
+        </property-line>
+        <property-line>
+          <span class="h4strapless">Challenge</span>
+          <span class="pstrapless">{{detail.cr}}</span>
+        </property-line>
+      </top-stats>
+
+      <div ng-repeat="trait in traits">
+        <property-block>
+          <span class="h4strapless">{{trait.name}}.</span>
+          <span class="pstrapless">{{trait.text}}.</span>
+        </property-block>
+      </div>
+
+      <span class="h3strapless">Actions</span>
+      <div ng-repeat="action in actions">
+        <property-block>
+          <span class="h4strapless">{{action.name}}.</span>
+          <span class="pstrapless">{{action.text}}.</span>
+        </property-block>
+      </div>
+
+    </stat-block>
+  </div>
+</div>
