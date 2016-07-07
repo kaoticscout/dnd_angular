@@ -1,11 +1,20 @@
 <div class="main">
   <div class="container">
     <div class="row">
-      <div class="monsterBox col-md-3" ng-repeat="monster in monsters">
+        <input style="margin:0px 0px 20px 30px" id="search" name="search" placeholder="Start typing here" type="text" data-list=".searchable">
+    </div>
+    <div class="searchable row">
+      <div class="monsterBox col-md-3" ng-repeat="monster in monsters" onload="alertMe()">
         <a href="#/monsters/{{$index}}">
-          <p class="monsterListing" >{{ monster.name }}</p>
+          <p class="monsterListing" >{{ monster.name }}</p></span>
         </a>
       </div>
     </div>
   </div>
 </div>
+
+<script>
+
+      $('#search').hideseek();
+
+</script>
