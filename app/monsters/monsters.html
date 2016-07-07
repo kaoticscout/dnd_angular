@@ -5,7 +5,7 @@
     </div>
     <div class="searchable row">
       <div class="monsterBox col-md-3" ng-repeat="monster in monsters" onload="alertMe()">
-        <a href="#/monsters/{{$index}}">
+        <a href="#/monsters/{{monster.name}}">
           <p class="monsterListing" >{{ monster.name }}</p></span>
         </a>
       </div>

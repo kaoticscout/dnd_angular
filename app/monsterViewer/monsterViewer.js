@@ -1,9 +1,11 @@
 'use strict';
 
+var monsterDict = new Array();
+
 angular.module('myApp.monsterViewer', ['ngRoute'])
 
 .config(['$routeProvider', function($routeProvider) {
-  $routeProvider.when('/monsters/:id', {
+  $routeProvider.when('/monsters/:name', {
     templateUrl: 'monsterViewer/monsterViewer.html',
     controller: 'MonsterController'
   });
@@ -11,8 +13,15 @@ angular.module('myApp.monsterViewer', ['ngRoute'])
 
 .controller('MonsterController', ['$scope', 'monsters', '$routeParams', function($scope, monsters, $routeParams) {
   monsters.success(function(data) {
-    $scope.detail = data[$routeParams.id];
-    $scope.traits = data[$routeParams.id]['trait'];
-    $scope.actions = data[$routeParams.id]['action'];
+
+    var count = 0;
+    for (var monster of data) {
+      monsterDict[monster['name']] = count;
+      count = count + 1;
+    }
+
+    $scope.detail = data[monsterDict[$routeParams.name]];
+    $scope.traits = data[monsterDict[$routeParams.name]]['trait'];
+    $scope.actions = data[monsterDict[$routeParams.name]]['action'];
   });
 }]);
