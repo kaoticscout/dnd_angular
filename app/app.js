@@ -8,6 +8,7 @@ var app = angular.module('myApp', [
   'myApp.photoViewer',
   'myApp.monsters',
   'myApp.monsterViewer',
+  'myApp.items',
   'myApp.version'
 ])
 // .

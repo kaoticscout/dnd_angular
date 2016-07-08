@@ -1,0 +1,16 @@
+<div class="main">
+  <div class="container">
+    <div class="row">
+        <input style="margin:0px 0px 20px 30px" id="search" name="search" placeholder="Start typing here" type="text" data-list=".searchable">
+    </div>
+    <div class="searchable row">
+      <div class="col-md-3" ng-repeat="item in items">
+          <p style="margin-left: 20px" class="itemListing" >{{ item.name }} - {{item.value}}</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+      $('#search').hideseek();
+</script>

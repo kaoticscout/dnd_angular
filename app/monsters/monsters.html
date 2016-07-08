@@ -4,9 +4,9 @@
         <input style="margin:0px 0px 20px 30px" id="search" name="search" placeholder="Start typing here" type="text" data-list=".searchable">
     </div>
     <div class="searchable row">
-      <div class="monsterBox col-md-3" ng-repeat="monster in monsters" onload="alertMe()">
+      <div class="monsterBox col-md-3" ng-repeat="monster in monsters">
         <a href="#/monsters/{{monster.name}}">
-          <p class="monsterListing" >{{ monster.name }}</p></span>
+          <p class="monsterListing" >{{ monster.name }}</p>
         </a>
       </div>
     </div>
