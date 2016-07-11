@@ -23,7 +23,6 @@
   <link rel="import" href="statblock/property-block.html">
   <link rel="import" href="statblock/property-line.html">
   <link rel="import" href="statblock/stat-block.html">
-
 </head>
 
 <body>
@@ -66,6 +65,13 @@
   <script src="components/version/version.js"></script>
   <script src="components/version/version-directive.js"></script>
   <script src="components/version/interpolate-filter.js"></script>
+
+  <!-- JQUERY TOOLTIPS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/qtip2/3.0.3/basic/jquery.qtip.css">
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/qtip2/3.0.3/basic/jquery.qtip.js"></script>
+  <script>
+    $('[title]').qtip();
+  </script>
 
   <!-- Services -->
   <script src="services/photos.js"></script>
